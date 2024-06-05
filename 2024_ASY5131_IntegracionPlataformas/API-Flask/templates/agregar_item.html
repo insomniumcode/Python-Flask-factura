@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+
+</head>
+<body>
+    <form action="{{ url_for('agregar_item') }}" method="post">
+        <label for="cliente">Cliente:</label>
+        <select id="cboCliente" name="cliente" required>
+            {% for cliente in clientes %}
+                <option value="{{ cliente['id'] }}">{{ cliente['nombre'] }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="producto">Producto:</label>
+        <select id="cboProducto" name="producto" required>
+            {% for producto in productos %}
+                <option value="{{ producto['id'] }}">{{ producto['nombre'] }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required><br><br>
+        
+        <button type="submit">Agregar</button>
+    </form>
+    <script type="text/javascript">
+       
+       fetch("http://localhost:7777/api/cliente")
+       .then( (obj) => {
+            console.log((obj));
+            obj.json().then((json) => (
+                console.log((json))
+            ) )
+
+            alert("Funcionó!");
+       } ).catch( () => {
+            alert("Se cayó!");
+       }).finally( () => {
+            alert("Finalizó");
+       });
+
+
+    var apiUrl ='http://localhost:7777/api/cliente';
+    var apiUrl2 ='http://localhost:5000/api/producto';
+    
+    // obtener selector  cliente 
+    fetch(apiUrl).then(function(result){
+        if(result.ok){
+            return result.json();
+        }
+    
+    }).then(function(data){
+        data.forEach(function(element){
+            console.log(element);
+            let cboCliente=document.getElementById("cboCliente");
+            let opt =document.createElement("option");
+            opt.appendChild( document.createTextNode(element.razonSocial));
+            opt.value=element.id;
+    
+            cboCliente.appendChild(opt);
+    
+        })
+    })
+    
+    //obtener selector productos
+    
+    fetch(apiUrl2).then(function(result){
+        if(result.ok){
+            return result.json();
+        }
+    
+    }).then(function(data){
+        data.forEach(function(element){
+            console.log(element);
+            let cboProducto=document.getElementById("cboProducto");
+            let opt =document.createElement("option");
+            opt.appendChild( document.createTextNode(element.nombreproducto));
+            opt.value=element.id;
+    
+            cboProducto.appendChild(opt);
+    
+        })
+    
+    })
+       
+    </script>
+
+  
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura</title>
+</head>
+<body>
+    <h1>Factura</h1>
+    <p><strong>Cliente:</strong> {{ factura['cliente'] }}</p>
+    <p><strong>Producto:</strong> {{ factura['Producto'] }}</p>
+    <ul>
+        {% for item in factura['items'] %}
+            <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}  </li>
+        {% endfor %}
+    </ul>
+    <h2>Total: {{ total }}</h2>
+    <a href="{{ url_for('agregar_item') }}">Agregar Item</a>
+</body>
+</html>
