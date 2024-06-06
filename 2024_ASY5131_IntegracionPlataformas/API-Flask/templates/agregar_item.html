@@ -7,6 +7,7 @@
 
 </head>
 <body>
+    <div class="container">
     <form action="{{ url_for('agregar_item') }}" method="post">
         <label for="cliente">Cliente:</label>
         <select id="cboCliente" name="cliente" required>
@@ -27,6 +28,8 @@
         
         <button type="submit">Agregar</button>
     </form>
+
+</div>
     <script type="text/javascript">
        
        fetch("http://localhost:7777/api/cliente")
@@ -43,6 +46,7 @@
             alert("Finalizó");
        });
 
+       //JS 
 
     var apiUrl ='http://localhost:7777/api/cliente';
     var apiUrl2 ='http://localhost:5000/api/producto';
@@ -93,3 +97,21 @@
 
 </body>
 </html>
+
+<style>
+    body, html {
+       
+   height: 100%;
+   margin: 0 ;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   }
+
+   .container {
+       width: 300px;
+       padding: 20px;
+       border: 1px solid #ccc;
+   }
+
+</style>

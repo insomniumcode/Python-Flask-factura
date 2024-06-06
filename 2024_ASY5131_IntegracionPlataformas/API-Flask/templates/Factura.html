@@ -5,6 +5,7 @@
     <title>Factura</title>
 </head>
 <body>
+    <div class="container">
     <h1>Factura</h1>
     <p><strong>Fecha y Hora:</strong> {{ factura['fecha_hora'] }}</p>
     <p><strong>Cliente:</strong> {{ factura['cliente'] }}</p>
@@ -17,4 +18,25 @@
     <h2>Total: {{ total }}</h2>
     <a href="{{ url_for('agregar_item') }}">Agregar Item</a>
 </body>
+</div>
 </html>
+
+
+<!--style PD lo agregue directamente en el html de factura pq  como paso con el js no me dejo ponerlo aparte -->
+<style>
+     body, html {
+        
+    height: 100%;
+    margin: 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .container {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+</style>
