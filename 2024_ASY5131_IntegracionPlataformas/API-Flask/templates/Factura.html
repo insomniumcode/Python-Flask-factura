@@ -7,6 +7,50 @@
 <body>
     <div class="container">
         <h1>Factura</h1>
+        <p><strong>Fecha y Hora:</strong> {{ factura['fecha_hora'] }}</p>
+        <p><strong>Cliente:</strong> {{ factura['cliente'] }}</p>
+        <ul>
+            {% for item in factura['items'] %}
+                <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Método de Pago:</strong> {{ factura['metodo_pago'] }}</p>
+        <p><strong>Forma de Envío:</strong> {{ factura['forma_envio'] }}</p>
+        <h2>Total: {{ factura['total'] }}</h2>
+    </div>
+</body>
+</html>
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+</style>
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Factura</h1>
         <p><strong>Fecha y Hora:</strong> {{ fecha_hora }}</p>
         <p><strong>Cliente:</strong> {{ carrito['cliente'] }}</p>
         <ul>
@@ -35,4 +79,4 @@
         padding: 20px;
         border: 1px solid #ccc;
     }
-</style>
+</style>-->

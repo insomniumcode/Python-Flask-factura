@@ -21,6 +21,8 @@ carrito = {
     'forma_envio': ''
 }
 
+facturas=[]
+
 
 # calcular el total carrito
 def calcular_total(items):
@@ -79,7 +81,20 @@ def agregar_item():
 def mostrar_factura():
     total = calcular_total(carrito['items'])
     fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    return render_template('factura.html', carrito=carrito, total=total, fecha_hora=fecha_hora)
+    factura = {
+        'cliente': carrito['cliente'],
+        'items': carrito['items'],
+        'metodo_pago': carrito['metodo_pago'],
+        'forma_envio': carrito['forma_envio'],
+        'total': total,
+        'fecha_hora': fecha_hora
+    }
+    facturas.append(factura)
+    return render_template('factura.html', factura=factura, carrito=carrito, total=total, fecha_hora=fecha_hora )
+
+@app.route('/bodeguero', methods=['GET'])
+def vista_bodeguero():
+    return render_template('bodeguero.html', facturas=facturas)
 
 if __name__ == '__main__':
     app.run(debug=True)
