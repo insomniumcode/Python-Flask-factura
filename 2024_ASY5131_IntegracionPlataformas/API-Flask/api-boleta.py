@@ -90,6 +90,21 @@ def mostrar_factura():
         'fecha_hora': fecha_hora
     }
     facturas.append(factura)
+
+    # actualiza estock 
+    for item in carrito['items']:
+        producto_id = item['id']
+        cantidad = item['cantidad']
+        requests.put(f'http://localhost:5000/api/producto/{producto_id}/DescuentoStock', json=cantidad)
+
+
+    # Limpiar el carrito después de la factura
+    carrito['items'] = []
+    carrito['metodo_pago'] = ''
+    carrito['forma_envio'] = ''
+
+
+
     return render_template('factura.html', factura=factura, carrito=carrito, total=total, fecha_hora=fecha_hora )
 
 @app.route('/bodeguero', methods=['GET'])

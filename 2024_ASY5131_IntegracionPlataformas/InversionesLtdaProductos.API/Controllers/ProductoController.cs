@@ -50,6 +50,26 @@ namespace InversionesLtdaProductos.API.Controllers
             lista.Remove(lista.FirstOrDefault(x => x.id == id));
         }
 
-
+        // PUT: descuento de stock
+        [HttpPut("{id}/DescuentoStock")]
+        public IActionResult DescuentoStock(int id, [FromBody] int cantidad)
+        {
+            var producto = lista.FirstOrDefault(x => x.id == id);
+            if (producto == null)
+            {
+                return NotFound();
+            }
+            if (producto.Stock < cantidad)
+            {
+                return BadRequest("Stock insuficiente.");
+            }
+            producto.Stock -= cantidad;
+            return NoContent();
+        }
     }
+
+
+
+
 }
+
