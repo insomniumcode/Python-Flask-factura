@@ -19,6 +19,9 @@
                 <p><strong>Método de Pago:</strong> {{ factura['metodo_pago'] }}</p>
                 <p><strong>Forma de Envío:</strong> {{ factura['forma_envio'] }}</p>
                 <h2>Total: {{ factura['total'] }}</h2>
+                <form action="/eliminar_factura/{{ loop.index0 }}" method="post">
+                    <button type="submit">Quitar</button>
+                </form>
             </div>
         {% endfor %}
     </div>

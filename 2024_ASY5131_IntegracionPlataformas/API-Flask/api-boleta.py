@@ -28,7 +28,7 @@ facturas=[]
 def calcular_total(items):
     return sum(item['precio'] * item['cantidad'] for item in items)
 
-#  factura en  HTML
+#  carrito en  HTML
 @app.route('/carrito', methods=['GET'])
 def mostrar_carrito():
     total = calcular_total(carrito['items'])
@@ -98,7 +98,7 @@ def mostrar_factura():
         requests.put(f'http://localhost:5000/api/producto/{producto_id}/DescuentoStock', json=cantidad)
 
 
-    # Limpiar el carrito después de la factura
+    # Limpiar el carrito cuando genere la facura
     carrito['items'] = []
     carrito['metodo_pago'] = ''
     carrito['forma_envio'] = ''
@@ -110,6 +110,18 @@ def mostrar_factura():
 @app.route('/bodeguero', methods=['GET'])
 def vista_bodeguero():
     return render_template('bodeguero.html', facturas=facturas)
+
+@app.route('/eliminar_factura/<int:index>', methods=['POST'])
+def eliminar_factura(index):
+    if 0 <= index < len(facturas):
+        del facturas[index]
+    return redirect(url_for('vista_bodeguero'))
+
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
