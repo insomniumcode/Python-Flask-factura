@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\prueba\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj": {}
+    "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj": {}
   },
   "projects": {
-    "C:\\prueba\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj": {
+    "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\prueba\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj",
+        "projectUniqueName": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj",
         "projectName": "InversionesLtdaProductos.API",
-        "projectPath": "C:\\prueba\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj",
+        "projectPath": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\InversionesLtdaProductos.API.csproj",
         "packagesPath": "C:\\Users\\destr\\.nuget\\packages\\",
-        "outputPath": "C:\\prueba\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\obj\\",
+        "outputPath": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\destr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,31 +6,28 @@
 </head>
 <body>
     <div class="container">
-    <h1>Factura</h1>
-    <p><strong>Fecha y Hora:</strong> {{ factura['fecha_hora'] }}</p>
-    <p><strong>Cliente:</strong> {{ factura['cliente'] }}</p>
-    <p><strong>Producto:</strong> {{ factura['Producto'] }}</p>
-    <ul>
-        {% for item in factura['items'] %}
-            <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}  </li>
-        {% endfor %}
-    </ul>
-    <h2>Total: {{ total }}</h2>
-    <a href="{{ url_for('agregar_item') }}">Agregar Item</a>
+        <h1>Factura</h1>
+        <p><strong>Fecha y Hora:</strong> {{ fecha_hora }}</p>
+        <p><strong>Cliente:</strong> {{ carrito['cliente'] }}</p>
+        <ul>
+            {% for item in carrito['items'] %}
+                <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Método de Pago:</strong> {{ carrito['metodo_pago'] }}</p>
+        <p><strong>Forma de Envío:</strong> {{ carrito['forma_envio'] }}</p>
+        <h2>Total: {{ total }}</h2>
+    </div>
 </body>
-</div>
 </html>
 
-
-<!--style PD lo agregue directamente en el html de factura pq  como paso con el js no me dejo ponerlo aparte -->
 <style>
-     body, html {
-        
-    height: 100%;
-    margin: 0 ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .container {
@@ -38,5 +35,4 @@
         padding: 20px;
         border: 1px solid #ccc;
     }
-
 </style>

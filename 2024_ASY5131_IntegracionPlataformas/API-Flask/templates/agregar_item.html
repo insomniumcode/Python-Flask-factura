@@ -25,7 +25,21 @@
         
         <label for="cantidad">Cantidad:</label>
         <input type="number" id="cantidad" name="cantidad" required><br><br>
-        
+
+        <label for="metodo_pago">Método de Pago:</label>
+            <select id="metodo_pago" name="metodo_pago" required>
+                <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Transferencia Bancaria">Transferencia Bancaria</option>
+            </select><br><br>
+            
+            <label for="forma_envio">Forma de Envío:</label>
+            <select id="forma_envio" name="forma_envio" required>
+                <option value="Envío a Domicilio">Envío a Domicilio</option>
+                <option value="Recogida en Tienda">Recogida en Tienda</option>
+            </select><br><br>
+
         <button type="submit">Agregar</button>
     </form>
 
