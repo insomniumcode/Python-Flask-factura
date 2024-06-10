@@ -22,6 +22,7 @@ carrito = {
 }
 
 facturas=[]
+id_factura = 0
 
 
 # calcular el total carrito
@@ -82,20 +83,31 @@ def mostrar_factura():
     total = calcular_total(carrito['items'])
     fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     factura = {
+        'id': len(facturas) + 1,
         'cliente': carrito['cliente'],
         'items': carrito['items'],
         'metodo_pago': carrito['metodo_pago'],
         'forma_envio': carrito['forma_envio'],
         'total': total,
-        'fecha_hora': fecha_hora
+        'fecha_hora': fecha_hora,
+        'estado': 'Pendiente'
     }
     facturas.append(factura)
+   
+
+    requests.post('http://localhost:6000/api/pedido', json={
+        'Id': factura['id'],
+        'Estado': factura['estado']
+    })
+
 
     # actualiza estock 
     for item in carrito['items']:
         producto_id = item['id']
         cantidad = item['cantidad']
         requests.put(f'http://localhost:5000/api/producto/{producto_id}/DescuentoStock', json=cantidad)
+
+        requests.post('http://localhost:6000/api/pedido', json=factura)
 
 
     # Limpiar el carrito cuando genere la facura
@@ -107,9 +119,6 @@ def mostrar_factura():
 
     return render_template('factura.html', factura=factura, carrito=carrito, total=total, fecha_hora=fecha_hora )
 
-@app.route('/bodeguero', methods=['GET'])
-def vista_bodeguero():
-    return render_template('bodeguero.html', facturas=facturas)
 
 @app.route('/eliminar_factura/<int:index>', methods=['POST'])
 def eliminar_factura(index):
@@ -117,7 +126,23 @@ def eliminar_factura(index):
         del facturas[index]
     return redirect(url_for('vista_bodeguero'))
 
+@app.route('/actualizar_estado/<int:id>', methods=['POST'])
+def actualizar_estado(id):
+    nuevo_estado = request.form['estado']
+    response = requests.put(f'http://localhost:6000/api/pedido/{id}', json={'estado': nuevo_estado})
+    if response.status_code == 200:
+        for factura in facturas:
+            if factura['id'] == id:
+                factura['estado'] = nuevo_estado
+                break
+        return redirect(url_for('vista_bodeguero'))
+    else:
+        # Hubo un error
+        return f"Error al actualizar el estado: {response.status_code}", response.status_code
 
+@app.route('/bodeguero', methods=['GET'])
+def vista_bodeguero():
+    return render_template('bodeguero.html', facturas=facturas)
 
 
 

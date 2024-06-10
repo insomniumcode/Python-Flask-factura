@@ -19,6 +19,14 @@
                 <p><strong>Método de Pago:</strong> {{ factura['metodo_pago'] }}</p>
                 <p><strong>Forma de Envío:</strong> {{ factura['forma_envio'] }}</p>
                 <h2>Total: {{ factura['total'] }}</h2>
+                <p><strong>Estado:</strong> {{ factura['estado'] }}</p>
+                <form action="{{ url_for('actualizar_estado', id=factura['id']) }}" method="post">
+                    <select name="estado">
+                        <option value="Pendiente" {% if factura['estado'] == 'Pendiente' %}selected{% endif %}>Pendiente</option>
+                        <option value="Completado" {% if factura['estado'] == 'Completado' %}selected{% endif %}>Completado</option>
+                    </select>
+                    <button type="submit">Actualizar Estado</button>
+                </form>
                 <form action="/eliminar_factura/{{ loop.index0 }}" method="post">
                     <button type="submit">Quitar</button>
                 </form>
