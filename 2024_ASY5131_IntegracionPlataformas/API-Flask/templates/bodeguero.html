@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Vista de Bodeguero</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+        <a class="navbar-brand" href="#">Inversiones Ltda.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('vista_bodeguero') }}">Facturas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
     <div class="container">
-        <h1>Facturas</h1>
+        
         {% for factura in facturas %}
             <div class="factura">
                 <p><strong>Fecha y Hora:</strong> {{ factura['fecha_hora'] }}</p>
@@ -41,6 +60,7 @@
         height: 100%;
         margin: 0;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -51,6 +71,9 @@
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
+        margin-top: 70px;
+        overflow-y: auto; 
+        height: calc(100% - 70px);
     }
 
     .factura {
@@ -69,7 +92,22 @@
     li {
         margin-bottom: 5px;
     }
+    
+    a {
+        color: antiquewhite !important;
+    }
+    
+
+    .navbar-custom {
+            width: 100%;
+            background-color:#152733 !important;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
 </style>
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

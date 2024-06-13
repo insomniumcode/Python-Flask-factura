@@ -4,36 +4,64 @@
     <meta charset="UTF-8">
     <title>Factura</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Factura</h1>
-        <p><strong>Fecha y Hora:</strong> {{ factura['fecha_hora'] }}</p>
-        <p><strong>Cliente:</strong> {{ factura['cliente'] }}</p>
-        <ul>
-            {% for item in factura['items'] %}
-                <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}</li>
-            {% endfor %}
-        </ul>
-        <p><strong>Método de Pago:</strong> {{ factura['metodo_pago'] }}</p>
-        <p><strong>Forma de Envío:</strong> {{ factura['forma_envio'] }}</p>
-        <h2>Total: {{ factura['total'] }}</h2>
+
+<div class="container1">
+    <div class="container2">
+        <body>
+                <h1>Factura</h1>
+                <p><strong>Fecha y Hora:</strong> {{ factura['fecha_hora'] }}</p>
+                <p><strong>Cliente:</strong> {{ factura['cliente'] }}</p>
+                <ul>
+                    {% for item in factura['items'] %}
+                        <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}</li>
+                    {% endfor %}
+                </ul>
+                <p><strong>Método de Pago:</strong> {{ factura['metodo_pago'] }}</p>
+                <p><strong>Forma de Envío:</strong> {{ factura['forma_envio'] }}</p>
+                <h2>Total: {{ factura['total'] }}</h2>
+        
+        </body>
     </div>
-</body>
+</div>
 </html>
 
 <style>
-    body, html {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+   *, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-    .container {
+html, body {
+    height: 100%;
+    background-color: #152733;
+    overflow: hidden;
+}
+
+p, h1, h2, ul{
+    color: antiquewhite;
+
+
+}
+
+   
+.container2 {
         width: 300px;
         padding: 20px;
-        border: 1px solid #ccc;
+        border: 10px solid #ccc;
+        text-align: left;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 20;
+        right: 0;
+        margin: auto;
+    }
+
+        .container1{
+    position: relative;
     }
 </style>
 

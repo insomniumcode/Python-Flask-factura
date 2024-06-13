@@ -4,44 +4,73 @@
     <meta charset="UTF-8">
     <title>Carrito</title>
 </head>
-<body>
-    <div class="container">
-    <h1>Carrito</h1>
-    <p><strong>Cliente:</strong> {{ carrito['cliente'] }}</p>
-    <p><strong>Producto:</strong> {{ carrito['Producto'] }}</p>
-    <ul>
-        {% for item in carrito['items'] %}
-            <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}  </li>
-        {% endfor %}
-    </ul>
-    <p><strong>Método de Pago:</strong> {{ carrito['metodo_pago'] }}</p>
-    <p><strong>Forma de Envío:</strong> {{ carrito['forma_envio'] }}</p>
+<div class="container1">
+    <div class="container2">
 
-    <h2>Total: {{ total }}</h2>
-    <a href="{{ url_for('agregar_item') }}">Agregar</a>
-    <a href="{{ url_for('mostrar_factura') }}">Pagar</a>
+        <body>
+        <h1 id="text">Carrito</h1>
+        <p id="text"><strong>Cliente:</strong> {{ carrito['cliente'] }}</p>
+        <p><strong>Producto:</strong> {{ carrito['Producto'] }}</p>
+        <ul>
+            {% for item in carrito['items'] %}
+                <li>{{ item['nombre'] }} - Precio: {{ item['precio'] }} - Cantidad: {{ item['cantidad'] }}  </li>
+            {% endfor %}
+        </ul>
+        <p><strong>Método de Pago:</strong> {{ carrito['metodo_pago'] }}</p>
+        <p><strong>Forma de Envío:</strong> {{ carrito['forma_envio'] }}</p>
 
-    
-</body>
+        <h2>Total: {{ total }}</h2>
+        <a href="{{ url_for('agregar_item') }}">Agregar</a>
+        <a href="{{ url_for('mostrar_factura') }}">Pagar</a>
+        </body>
+
+    </div>
 </div>
 </html>
 
 
 <!--style PD lo agregue directamente en el html de carrito pq  como paso con el js no me dejo ponerlo aparte -->
 <style>
-     body, html {
-        
-    height: 100%;
-    margin: 0 ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
 
-    .container {
+*, body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+    background-color: #152733;
+    overflow: hidden;
+}
+
+p, h1, h2, ul{
+    color: antiquewhite;
+
+
+}
+
+
+    .container2 {
         width: 300px;
         padding: 20px;
-        border: 1px solid #ccc;
+        border: 10px solid #ccc;
+        text-align: left;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 20;
+        right: 0;
+        margin: auto;
     }
+
+        .container1{
+    position: relative;
+    }
+
+    
 
 </style>
