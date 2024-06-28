@@ -90,3 +90,4 @@ C:\Prueba\Python-Flask-factura\2024_ASY5131_IntegracionPlataformas\InversionesLt
 C:\Prueba\Python-Flask-factura\2024_ASY5131_IntegracionPlataformas\InversionesLtdaLogistica.API\InversionesLtdaLogistica.API\obj\Debug\netcoreapp3.1\InversionesLtdaLogistica.API.dll
 C:\Prueba\Python-Flask-factura\2024_ASY5131_IntegracionPlataformas\InversionesLtdaLogistica.API\InversionesLtdaLogistica.API\obj\Debug\netcoreapp3.1\InversionesLtdaLogistica.API.pdb
 C:\Prueba\Python-Flask-factura\2024_ASY5131_IntegracionPlataformas\InversionesLtdaLogistica.API\InversionesLtdaLogistica.API\obj\Debug\netcoreapp3.1\InversionesLtdaLogistica.API.genruntimeconfig.cache
+C:\Proyecto\Python-Flask-factura\2024_ASY5131_IntegracionPlataformas\InversionesLtdaLogistica.API\InversionesLtdaLogistica.API\bin\Debug\netcoreapp3.1\InversionesLtdaLogistica.API.StaticWebAssets.xml

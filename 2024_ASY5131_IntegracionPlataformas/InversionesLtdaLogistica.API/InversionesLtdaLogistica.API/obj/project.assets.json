@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Prueba\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API.csproj",
+      "projectUniqueName": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API.csproj",
       "projectName": "InversionesLtdaLogistica.API",
-      "projectPath": "C:\\Prueba\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API.csproj",
+      "projectPath": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API.csproj",
       "packagesPath": "C:\\Users\\destr\\.nuget\\packages\\",
-      "outputPath": "C:\\Prueba\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API\\obj\\",
+      "outputPath": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaLogistica.API\\InversionesLtdaLogistica.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\destr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,6 +28,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -69,7 +70,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

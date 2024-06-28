@@ -3,58 +3,106 @@ using System;
 using InversionesLtdaProductos.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace InversionesLtdaProductos.API.Controllers
 {
 
-    [Route("api/Producto")]
+  
+    [Route("api/[controller]")]
     [ApiController]
-
     public class ProductoController : ControllerBase
     {
-        private static IList<Producto> lista = new List<Producto>();
+        private readonly Productocontext _context;
 
-        // GET: api/<ClienteController>
+        public ProductoController(Productocontext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/Producto
         [HttpGet]
-        public IEnumerable<Producto> Get()
+        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
         {
-            return lista;
+            return await _context.Productos.ToListAsync();
         }
 
-        // GET 
+        // GET: api/Producto/
         [HttpGet("{id}")]
-        public Producto Get(int id)
+        public async Task<ActionResult<Producto>> GetProducto(int id)
         {
-            return lista.FirstOrDefault(x => x.id == id);
+            var producto = await _context.Productos.FindAsync(id);
+
+            if (producto == null)
+            {
+                return NotFound();
+            }
+
+            return producto;
         }
 
-        // POST 
+        // POST: api/Producto
         [HttpPost]
-        public void Post([FromBody] Producto value)
+        public async Task<ActionResult<Producto>> PostProducto(Producto producto)
         {
-            lista.Add(value);
+            _context.Productos.Add(producto);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetProducto", new { id = producto.id }, producto);
         }
 
-        // PUT 
+        // PUT: api/Producto/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Producto value)
+        public async Task<IActionResult> PutProducto(int id, Producto producto)
         {
-            Producto selection = lista.FirstOrDefault(x => x.id == id);
-            lista[lista.IndexOf(selection)] = value;
+            if (id != producto.id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(producto).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProductoExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
-        // DELETE 
+        // DELETE: api/Producto/
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> DeleteProducto(int id)
         {
-            lista.Remove(lista.FirstOrDefault(x => x.id == id));
+            var producto = await _context.Productos.FindAsync(id);
+            if (producto == null)
+            {
+                return NotFound();
+            }
+
+            _context.Productos.Remove(producto);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
-        // PUT: descuento de stock
+        // PUT: api/Producto/DescuentoStock
         [HttpPut("{id}/DescuentoStock")]
-        public IActionResult DescuentoStock(int id, [FromBody] int cantidad)
+        public async Task<IActionResult> DescuentoStock(int id, [FromBody] int cantidad)
         {
-            var producto = lista.FirstOrDefault(x => x.id == id);
+            var producto = await _context.Productos.FindAsync(id);
             if (producto == null)
             {
                 return NotFound();
@@ -64,12 +112,16 @@ namespace InversionesLtdaProductos.API.Controllers
                 return BadRequest("Stock insuficiente.");
             }
             producto.Stock -= cantidad;
+            await _context.SaveChangesAsync();
+
             return NoContent();
         }
+
+        private bool ProductoExists(int id)
+        {
+            return _context.Productos.Any(e => e.id == id);
+        }
     }
-
-
-
-
 }
+
 

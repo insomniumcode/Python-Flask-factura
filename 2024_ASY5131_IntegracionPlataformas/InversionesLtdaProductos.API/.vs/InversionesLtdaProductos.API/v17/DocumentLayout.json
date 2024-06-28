@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|c:\\proyecto\\python-flask-factura\\2024_asy5131_integracionplataformas\\inversionesltdaproductos.api\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|c:\\proyecto\\python-flask-factura\\2024_asy5131_integracionplataformas\\inversionesltdaproductos.api\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|solutionrelative:controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|c:\\proyecto\\python-flask-factura\\2024_asy5131_integracionplataformas\\inversionesltdaproductos.api\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|solutionrelative:models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|c:\\proyecto\\python-flask-factura\\2024_asy5131_integracionplataformas\\inversionesltdaproductos.api\\models\\productocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF273AA1-15DA-4C52-B60B-06B02521878F}|InversionesLtdaProductos.API.csproj|solutionrelative:models\\productocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "Controllers\\ProductoController.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAIwDsAAAAiAAAA",
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Startup.cs",
+              "RelativeDocumentMoniker": "Startup.cs",
+              "ToolTip": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Startup.cs",
+              "RelativeToolTip": "Startup.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAIA3wA8AAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T19:01:11.502Z",
+              "WhenOpened": "2024-06-28T21:47:54.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "Controllers\\ProductoController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAASwH4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T21:40:35.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Models\\Producto.cs",
               "RelativeDocumentMoniker": "Models\\Producto.cs",
               "ToolTip": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Models\\Producto.cs",
               "RelativeToolTip": "Models\\Producto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T18:57:54.987Z",
+              "WhenOpened": "2024-06-28T21:40:31.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Productocontext.cs",
+              "DocumentMoniker": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Models\\Productocontext.cs",
+              "RelativeDocumentMoniker": "Models\\Productocontext.cs",
+              "ToolTip": "C:\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\InversionesLtdaProductos.API\\Models\\Productocontext.cs",
+              "RelativeToolTip": "Models\\Productocontext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T21:40:26.695Z",
               "EditorCaption": ""
             }
           ]
