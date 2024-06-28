@@ -3,16 +3,30 @@ from flask_restful import Api, Resource
 import requests
 #from flask_cors import CORS
 from datetime import datetime
-
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 
 app = Flask(__name__)
-#api = Api(app)
-#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-#            host           / endpoint
-#url = "http://localhost:7777/api/cliente"
-#url1 = "http://localhost:5000/api/producto"
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://Salazar:Dethklok1470@proyectoapi.database.windows.net/PROYECTO?driver=ODBC+Driver+17+for+SQL+Server'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+
+
+class Factura(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    cliente = db.Column(db.String(100), nullable=False)
+    items = db.Column(db.Text, nullable=False)
+    fecha_hora = db.Column(db.DateTime, default=datetime.utcnow)
+    metodo_pago = db.Column(db.String(50))
+    forma_envio = db.Column(db.String(50))
+    total = db.Column(db.Float)
+    estado = db.Column(db.String(50))
 
 carrito = {
     'cliente': '',
@@ -93,6 +107,21 @@ def mostrar_factura():
         'estado': 'Pendiente'
     }
     facturas.append(factura)
+
+
+    # Guardar factura en Base de datos 
+    nueva_factura = Factura(
+        cliente=factura['cliente'],
+        items=str(factura['items']),  
+        fecha_hora=datetime.now(),
+        metodo_pago=factura['metodo_pago'],
+        forma_envio=factura['forma_envio'],
+        total=factura['total'],
+        estado=factura['estado']
+    )
+
+    db.session.add(nueva_factura)
+    db.session.commit()
    
 
     requests.post('http://localhost:6000/api/pedido', json={

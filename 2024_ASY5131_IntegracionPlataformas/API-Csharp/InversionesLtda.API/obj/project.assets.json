@@ -8,28 +8,31 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\TI\\.nuget\\packages\\": {}
+    "C:\\Users\\destr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENG\\Documents\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\API-Csharp\\InversionesLtda.API\\InversionesLtda.API.csproj",
+      "projectUniqueName": "C:\\Prueba\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\API-Csharp\\InversionesLtda.API\\InversionesLtda.API.csproj",
       "projectName": "InversionesLtda.API",
-      "projectPath": "C:\\Users\\LENG\\Documents\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\API-Csharp\\InversionesLtda.API\\InversionesLtda.API.csproj",
-      "packagesPath": "C:\\Users\\TI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENG\\Documents\\Proyecto\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\API-Csharp\\InversionesLtda.API\\obj\\",
+      "projectPath": "C:\\Prueba\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\API-Csharp\\InversionesLtda.API\\InversionesLtda.API.csproj",
+      "packagesPath": "C:\\Users\\destr\\.nuget\\packages\\",
+      "outputPath": "C:\\Prueba\\Python-Flask-factura\\2024_ASY5131_IntegracionPlataformas\\API-Csharp\\InversionesLtda.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\TI\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\destr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -37,17 +40,24 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -59,7 +69,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.426\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }
